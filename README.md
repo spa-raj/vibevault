@@ -98,3 +98,15 @@ Each service has a GitHub Actions workflow: Docker build → ECR push → Helm d
 - **Payment state machine** preventing illegal transitions with conflict-safe webhook handling
 - **AWS SES email** notifications triggered automatically from Kafka events
 - **Infrastructure as Code** — entire platform created/destroyed via `terraform apply`/`destroy`
+
+---
+
+## E2E Testing
+
+A comprehensive end-to-end test script validates the full platform on EKS:
+
+```bash
+./scripts/test-eks-e2e.sh
+```
+
+Covers 55 tests including HTTPS via Kong, OAuth2 authentication, product CRUD, cart operations, checkout saga, order verification, Razorpay payment flow, multi-user isolation, error handling, and SES email delivery.
