@@ -329,7 +329,8 @@ if [ -n "$ADMIN_JJWT" ]; then
     echo -e "  ${GREEN}OK${NC} CUSTOMER role ready"
 fi
 
-SAGA_EMAIL="${NOTIFICATION_EMAIL:-sparshraj90@gmail.com}"
+# Set NOTIFICATION_EMAIL to an SES-verified address to receive the saga emails
+SAGA_EMAIL="${NOTIFICATION_EMAIL:-saga-test@example.com}"
 SAGA_PASSWORD="Test@1234"
 SAGA_PHONE="91$(date +%s | tail -c 9)"
 
