@@ -91,7 +91,7 @@ Each service has a GitHub Actions workflow: Docker build → ECR push → Helm d
 
 ## Key Highlights
 
-- **50 E2E tests** passing on live EKS deployment covering full saga flow
+- **E2E test script (~55 checks)** run against the live EKS deployment, covering the full saga flow
 - **Razorpay integration** with real payment links and HMAC-SHA256 webhook verification
 - **OpenSearch benchmarks** — MySQL LIKE queries: 0% success at 15 VUs; OpenSearch: 99.3% success, 27ms median
 - **Idempotent event processing** via database unique constraints on event IDs
@@ -109,4 +109,4 @@ A comprehensive end-to-end test script validates the full platform on EKS:
 ./scripts/test-eks-e2e.sh
 ```
 
-Covers 55 tests including HTTPS via Kong, OAuth2 authentication, product CRUD, cart operations, checkout saga, order verification, Razorpay payment flow, multi-user isolation, error handling, and SES email delivery.
+Covers about 55 checks including HTTPS via Kong, OAuth2 authentication, product CRUD, cart operations, checkout saga, order verification, Razorpay payment flow, multi-user isolation, error handling, and SES email delivery.
